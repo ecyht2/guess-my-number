@@ -3,6 +3,22 @@ use std::cmp::Ordering;
 
 use super::NumberGuessingGame;
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_reset_n_guesses() {
+        // Positive Numbers
+        assert_eq!(AutoNumberGuesser::get_guess(0, 10), 5);
+        // Negative Numbers
+        assert_eq!(AutoNumberGuesser::get_guess(-5, 5), 0);
+        assert_eq!(AutoNumberGuesser::get_guess(-11, -5), -8);
+        // Rounding Down
+        assert_eq!(AutoNumberGuesser::get_guess(1, 10), 5);
+    }
+}
+
 /// An AI that plays the number guessing game in the optimal way.
 pub struct AutoNumberGuesser {
     game: NumberGuessingGame,
