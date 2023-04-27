@@ -1,4 +1,4 @@
-# Print Big Text Rust
+# Guess My Number
 A number guessing game written in Rust.
 
 The C++ implementation of the library can be found [here](https://github.com/ecyht2/EEEE2065-cw2).
