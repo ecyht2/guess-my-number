@@ -1,3 +1,4 @@
+//! Histogram for plotting data collected from AI.
 use std::{collections::BTreeMap, fmt::Display, hash::Hash};
 
 /// Direction of the histogram.
