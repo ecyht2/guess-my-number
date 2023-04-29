@@ -3,7 +3,7 @@ use std::io::{self, Write};
 use clap::{Parser, *};
 use guess_my_number_rs::{
     histogram::{Direction, Histogram},
-    AutoNumberGuesser, NumberGuessingGame,
+    AutoNumberGuesser, NumberGuessingGame, Statistics,
 };
 
 /// Enum for who is playing the game.
@@ -143,14 +143,8 @@ fn main() {
             let histogram = Histogram::from_vec(data.clone());
             histogram.print(Direction::Horizontal);
 
-            let mean = data.iter().sum::<u128>() as f32 / data.len() as f32;
-            let mean_square = data.iter().map(|x| x * x).sum::<u128>() as f32 / data.len() as f32;
-            let variance = mean_square - mean * mean;
-            let std = variance.sqrt();
-
-            println!("Mean: {mean}");
-            println!("Variance: {variance}");
-            println!("Standard Deviation: {std}");
+            let stats = Statistics::from(data);
+            stats.print();
         }
     }
 }
