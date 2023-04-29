@@ -1,7 +1,10 @@
 use std::io::{self, Write};
 
 use clap::{Parser, *};
-use guess_my_number_rs::{histogram::{Histogram, Direction}, AutoNumberGuesser, NumberGuessingGame};
+use guess_my_number_rs::{
+    histogram::{Direction, Histogram},
+    AutoNumberGuesser, NumberGuessingGame,
+};
 
 /// Enum for who is playing the game.
 enum Player {
