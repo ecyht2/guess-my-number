@@ -37,3 +37,6 @@ or if it is already compiled
 ``` sh
 target/release/guess-my-number-rs --human
 ```
+
+## Documentation
+The API documentation of the library can be found in the project [GitHub pages](https://ecyht2.github.io/guess-my-number-rs/)
